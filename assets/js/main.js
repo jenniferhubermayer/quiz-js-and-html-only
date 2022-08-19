@@ -75,7 +75,8 @@ h1.style.fontSize = "32px";
 document.querySelector("body").style.display = "flex";
 document.querySelector("body").style.flexWrap = "wrap";
 document.querySelector("body").style.justifyContent= "center";
-content.style.width = "60%";
+content.style.width = "80%";
+content.style.maxWidth = "550px";
 
 // PLAY QUIZ FUNCTION ====>
 playQuiz = () =>{
@@ -87,20 +88,20 @@ playQuiz = () =>{
     // VARIABLES TO CREATE HTML ELEMENTS
     let quizImage = document.createElement("img");
     let quizQuestion = document.createElement("h2");
-    let quizArticle = document.createElement("article")
+    let quizArticle = document.createElement("article");
     let choices = item.choice.toString();
     let choicesArray = choices.split(",");
 
     // STYLE
     quizArticle.style.textAlign = "center";
     quizImage.style.width = "100%";
-    quizImage.style.marginTop = "60px"
-    quizQuestion.style.fontSize = "20px"
+    quizImage.style.marginTop = "60px";
+    quizQuestion.style.fontSize = "20px";
 
     // ATTRIBUTES
-    quizImage.src = item.url
-    quizQuestion.innerText = item.question
-    quizArticle.id = index
+    quizImage.src = item.url;
+    quizQuestion.innerText = item.question;
+    quizArticle.id = index;
 
     // BUILDS HTML STRUCTURE (ARTICLE > IMG + H2 + BUTTONS)
     content.appendChild(quizArticle);
@@ -116,7 +117,7 @@ playQuiz = () =>{
       btn.style.backgroundColor = "black";
       btn.style.color = "white";
       btn.style.border = "none";
-      btn.style.margin = "0 10px 10px 0"
+      btn.style.margin = "0 10px 10px 0";
 
       // ATTRIBUTES
       btn.innerText = item;
@@ -128,7 +129,7 @@ playQuiz = () =>{
   });
 
   // CHECK ANSWER ON BUTTON CLICK
-  const buttons = document.querySelectorAll("button")
+  const buttons = document.querySelectorAll("button");
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
